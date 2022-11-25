@@ -9,9 +9,9 @@ GRAY = colorama.Fore.LIGHTBLACK_EX
 RESET = colorama.Fore.RESET
 YELLOW = colorama.Fore.YELLOW
 
-# initialize the set of links (unique links)
 internal_urls = set()
 external_urls = set()
+total_urls_visited = 0
 
 
 def is_valid(url):
@@ -43,10 +43,6 @@ def get_all_website_links(url):
         urls.add(href)
         internal_urls.add(href)
     return urls
-
-
-# number of urls visited so far will be stored here
-total_urls_visited = 0
 
 
 def crawl(url, max_urls=30):
